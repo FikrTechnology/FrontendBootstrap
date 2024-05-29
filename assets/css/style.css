@@ -2,6 +2,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
 .fc-grey{
     color: #616161 !important;
 }
@@ -350,4 +355,12 @@
     font-size: 13px;
     color: #3C91A4;
     background: #D8E9ED;
+}
+
+.emptyHistory{
+    position: absolute;
+    top: 40%;
+    left: 78%;
+    width: 420px;
+    height: 250px;
 }
