@@ -39,8 +39,8 @@
     width: 15% !important;
 }
 
-.w-24{
-    width: 24% !important;
+.w-23{
+    width: 23% !important;
 }
 
 .w-60{
@@ -69,6 +69,20 @@
 
 .h-60{
     height: 60% !important;
+}
+
+.h-80{
+    height: 80% !important;
+}
+
+.py-6 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+.py-7 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
 }
 
 .center {
@@ -171,6 +185,11 @@
 .font-grey{
     color: #616161;
     font-size: 18px;
+}
+
+.font-grey-20px{
+    color: #616161;
+    font-size: 20px;
 }
 
 .font-grey-16px{
@@ -310,4 +329,25 @@
 
 .white-card{
     background: #ffffff;
+}
+
+.img-trash{
+    position: relative;
+    float: right;
+    top: 3rem;
+    width: 20px;
+}
+
+#inpAmount{
+    border: none;
+    color: #FF0000;
+    font-size: 18px;
+    text-align: end;
+    width: 200px;
+}
+
+.information-text{
+    font-size: 13px;
+    color: #3C91A4;
+    background: #D8E9ED;
 }

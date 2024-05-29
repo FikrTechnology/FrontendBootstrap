@@ -68,18 +68,264 @@
             </div>
         </div>
 
-        <div class="menu-center w-60 h-100">
-            <div class="row h-100">
-                <div class="col-12 ">
-                    
+        <div class="menu-center w-60 h-80 mt-7">
+            <div class="row ms-3 me-4">
+                <div class="col-12 h-50 white-card p-4 rounded-4">
+                    <div class="mb-3">
+                        <label for="" class="font-grey-20px">Confirm</label>
+                    </div>
+
+                    <div class="list-confirm">
+                        <div class="row mb-3">
+                            <div class="col-1">
+                                <img src="../assets/img/product/dapur/img-sambal-indofood.png" alt="" style="width: 70px;">
+                            </div>
+                            <div class="col-8">
+                                <label for="" class="font-grey-14px">Indofood Sambal Pedas 275 ml</label>
+                            </div>
+                            <div class="col-1 p-0">
+                                <img src="../assets/icons/ico-trash-grey.svg" alt="" class="img-trash">
+                            </div>
+                            <div class="col-2 text-center">
+                                <label for="" class="price-product">Rp 28.000</label>
+                                <div class="mt-3 text-center w-100" style="display: block;">
+                                    <button class="decreases-qty btn-qty-order">-</button>
+                                    <input type="tel" name="qty" value="0" class="input-qty-order text-center mx-2"/>
+                                    <button class="increase-qty btn-qty-order">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-1">
+                                <img src="../assets/img/product/dapur/img-minyak-sania.png" alt="" style="width: 70px;">
+                            </div>
+                            <div class="col-8">
+                                <label for="" class="font-grey-14px">Sania Minyak Goreng Pouch 1 L</label>
+                            </div>
+                            <div class="col-1 p-0">
+                                <img src="../assets/icons/ico-trash-grey.svg" alt="" class="img-trash">
+                            </div>
+                            <div class="col-2 text-center">
+                                <label for="" class="price-product">Rp 38.000</label>
+                                <div class="mt-3 text-center w-100" style="display: block;">
+                                    <button class="decreases-qty btn-qty-order">-</button>
+                                    <input type="tel" name="qty" value="0" class="input-qty-order text-center mx-2"/>
+                                    <button class="increase-qty btn-qty-order">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-1">
+                                <img src="../assets/img/product/dapur/img-gula-psm.png" alt="" style="width: 70px;">
+                            </div>
+                            <div class="col-8">
+                                <label for="" class="font-grey-14px">PSM Gula Pasir Kristal Putih Premium 1 kg</label>
+                            </div>
+                            <div class="col-1 p-0">
+                                <img src="../assets/icons/ico-trash-grey.svg" alt="" class="img-trash">
+                            </div>
+                            <div class="col-2 text-center">
+                                <label for="" class="price-product">Rp 36.000</label>
+                                <div class="mt-3 text-center w-100" style="display: block;">
+                                    <button class="decreases-qty btn-qty-order">-</button>
+                                    <input type="tel" name="qty" value="0" class="input-qty-order text-center mx-2"/>
+                                    <button class="increase-qty btn-qty-order">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-4 white-card rounded-4 p-4">
+                    <div class="mb-3">
+                        <label for="" class="font-grey-20px">Payment Method</label>
+                    </div>
+
+                    <div class="d-flex">
+                        <div class=" white-card border rounded-4 shadow-sm text-center p-2 me-3">
+                            <div class="p-0">
+                                <img src="../assets/img/transfer-bank/Tunai.svg" alt="" style="width: 70px;">
+                            </div>
+                            <div class="p-0 mt-2">
+                                <label for="" class="fc-grey">Cash</label>
+                            </div>
+                        </div>
+
+                        <div class=" white-card border rounded-4 shadow-sm text-center p-2 me-3">
+                            <div class="p-0">
+                                <img src="../assets/img/transfer-bank/Scan QRIS.svg" alt="" style="width: 70px;">
+                            </div>
+                            <div class="p-0 mt-2">
+                                <label for="" class="fc-grey">Qris</label>
+                            </div>
+                        </div>
+
+                        <div class=" white-card border rounded-4 shadow-sm text-center p-2 me-3">
+                            <div class="p-0">
+                                <img src="../assets/img/transfer-bank/Transfer.svg" alt="" style="width: 70px;">
+                            </div>
+                            <div class="p-0 mt-2">
+                                <label for="" class="fc-grey">Transfer</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="menu-right w-24 h-100">
-            <div class="row h-50 white-card">
-                <div class="col-12 ">
-                    tes
+        <div class="menu-right w-23 h-100">
+            <div class="row h-60 white-card mt-7 rounded-4">
+                <div class="col-12 p-4" id="cashMethod" style="display: none;">
+                    <div class="mb-3">
+                        <label for="" class="font-grey-20px">Cash</label>
+                    </div>
+
+                    <div id="totalAmount">
+                        <div class="row mb-3">
+                            <div class="col-6 font-grey">Total Pembayaran</div>
+                            <div class="col-6 text-end price-product" id="total">Rp 102.000</div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-6 font-grey">Tunai</div>
+                            <div class="col-6 text-end price-product" style="display: block;" id="amount">Rp 110.000</div>
+                            <div class="col-6 text-end p-0 pe-2" style="display: none;">
+                                <input type="tel" id="inpAmount" class="pe-1 border-bottom">
+                            </div>
+                        </div>
+
+                        <hr style="border-top: 2px dashed #616161;">
+
+                        <div class="row">
+                            <div class="col-6 font-grey">Kembalian</div>
+                            <div class="col-6 text-end price-product" id="total">Rp 8.000</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 mb-3">
+                        <label for="" class="font-grey-20px">Choose Money</label>
+                    </div>
+
+                    <div id="listMoney">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class=" white-card border rounded-4 shadow-sm text-center p-2 mb-3">
+                                    <div class="p-0">
+                                        <label for="">Custome</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class=" white-card border rounded-4 shadow-sm text-center p-2 mb-3">
+                                    <div class="p-0">
+                                        <label for="">Rp 10.000</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class=" white-card border rounded-4 shadow-sm text-center p-2 mb-3">
+                                    <div class="p-0">
+                                        <label for="">Rp 20.000</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class=" white-card border rounded-4 shadow-sm text-center p-2 mb-3">
+                                    <div class="p-0">
+                                        <label for="">Rp 50.000</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class=" white-card border rounded-4 shadow-sm text-center p-2 mb-3">
+                                    <div class="p-0">
+                                        <label for="">Rp 100.000</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-place-order w-100 mt-5">
+                        Selesai Pembayaran
+                    </button>
+                </div>
+
+                <div id="qrisMethod" style="display: none;">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12 text-center">
+                            <img src="../assets/img/dashboard/img-maintenance.svg" alt="">
+                            <div id="labelMaintenance" class="text-center-16px-green">
+                                Maaf Yaa.. Fitur ini Sedang dalam Pengembangan. <br>Mohon Bersabar.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="transferMethod" class="p-4" style="display: block;">
+                    <div class="row">
+                        <div class="col-6 font-grey">Total Pembayaran</div>
+                        <div class="col-6 text-end price-product" id="total">Rp 102.000</div>
+                    </div>
+
+                    <hr style="border-top: 2px dashed #616161;">
+
+                    <div class="mb-3">
+                        <label for="" class="font-grey-14px">Transfer pembayaran ke nomor rekening :</label>
+                    </div>
+
+                    <div id="listBank">
+                        <div class="row justify-content-center align-items-center mb-3">
+                            <div class="col-4">
+                                <img src="../assets/img/transfer-bank/logo-bca.svg" alt="" style="width: 120px;">
+                            </div>
+                            <div class="col-8">
+                                <label for="" id="accountNum" class="font-grey-14px">123 456 7890</label><br>
+                                <label for="" id="accountName" class="font-grey-14px">a/n Madura Nich</label>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center align-items-center mb-3">
+                            <div class="col-4">
+                                <img src="../assets/img/transfer-bank/logo-bni.svg" alt="" style="width: 120px;">
+                            </div>
+                            <div class="col-8">
+                                <label for="" id="accountNum" class="font-grey-14px">123 456 7890</label><br>
+                                <label for="" id="accountName" class="font-grey-14px">a/n Madura Nich</label>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center align-items-center mb-3">
+                            <div class="col-4">
+                                <img src="../assets/img/transfer-bank/logo-mandiri.svg" alt="" style="width: 120px;">
+                            </div>
+                            <div class="col-8">
+                                <label for="" id="accountNum" class="font-grey-14px">123 456 7890</label><br>
+                                <label for="" id="accountName" class="font-grey-14px">a/n Madura Nich</label>
+                            </div>
+                        </div>
+
+                        <div id="information" class="mt-3">
+                            <div class="row information-text py-2 rounded-2 mx-0">
+                                <div class="col-1">
+                                    <img src="../assets/icons/ico-info-green.svg" alt="">
+                                </div>
+                                <div class="col-11">
+                                    <label for="">Mohon di foto hasil transfer, untuk memudahkan hasil rekap.</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn-place-order w-100 mt-7">
+                            Selesai Pembayaran
+                        </button>
+                    </div>
                 </div>
             </div>
 
