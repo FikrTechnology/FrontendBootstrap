@@ -364,3 +364,8 @@ body{
     width: 420px;
     height: 250px;
 }
+
+.text-alert{
+    font-size: 12px;
+    color: red;
+}
