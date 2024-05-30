@@ -94,173 +94,294 @@
 
                     <div class="row h-8 m-0 me-3 mt-2 align-items-center text-center" id="categoryProduct">
                         <div class="col-2 ">
-                            <div class="cat-product-sub-card py-3">
+                            <div class="cat-product-sub-card category-selected py-3" id="catDapur" onclick="category('dapur', 'catDapur')">
                                 Kebutuhan Dapur
                             </div>
                         </div>
                         <div class="col-2 ">
-                            <div class="cat-product-sub-card py-3">
+                            <div class="cat-product-sub-card py-3" id="catRumah" onclick="category('rumah', 'catRumah')">
                                 Kebutuhan Rumah
                             </div>
                         </div>
                         <div class="col-2 ">
-                            <div class="cat-product-sub-card py-3">
+                            <div class="cat-product-sub-card py-3" id="catMakanan" onclick="category('makanan', 'catMakanan')">
                                 Makanan
                             </div>
                         </div>
                         <div class="col-2 ">
-                            <div class="cat-product-sub-card py-3">
+                            <div class="cat-product-sub-card py-3" id="catMinuman" onclick="category('minuman', 'catMinuman')">
                                 Minuman
                             </div>
                         </div>
                         <div class="col-2 ">
-                            <div class="cat-product-sub-card py-3">
+                            <div class="cat-product-sub-card py-3" id="catRokok" onclick="category('rokok', 'catRokok')">
                                 Rokok
                             </div>
                         </div>
                         <div class="col-2 ">
-                            <div class="cat-product-sub-card py-3">
+                            <div class="cat-product-sub-card py-3" id="catLain" onclick="category('lain', 'catLain')">
                                 Lain - lain
                             </div>
                         </div>
                     </div>
 
-                    <div class="" id="listProduct">
-                        <div class="row m-0 me-3 mt-2 list-product-dapur">
-                            <div class="col-3 mb-3">
-                                <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
-                                <div class="white-card p-4 rounded">
-                                    <div class="img-product text-center mt-2">
-                                        <img src="../assets/img/product/dapur/img-sambal-indofood.png" alt="" class="">
-                                    </div>
-                                    <div>
-                                        <label for="" class="mt-3 font-grey-16px">Indofood Sambal Pedas 275 ml</label>
-                                        <label for="" class="mt-3 price-product">Rp 14.000</label>
-                                    </div>
-                                    <div class="btn-add-cart mt-3" style="display: block;">
-                                        <button class="add-to-cart py-2">+ Add to Cart</button>
-                                    </div>
-                                    <div class="mt-3 text-center w-100" style="display: none;">
-                                        <button class="decreases-qty btn-qty">-</button>
-                                        <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
-                                        <button class="increase-qty btn-qty">+</button>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="col-3 mb-3">
-                                <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
-                                <div class="white-card p-4 rounded">
-                                    <div class="img-product text-center mt-2">
-                                        <img src="../assets/img/product/dapur/img-royco.png" alt="" class="">
-                                    </div>
-                                    <div>
-                                        <label for="" class="mt-3 font-grey-16px">Royco Bumbu Penyedap Rasa Kaldu Ayam 220 g</label>
-                                        <label for="" class="mt-3 price-product">Rp 13.000</label>
-                                    </div>
-                                    <div class="btn-add-cart mt-3" style="display: block;">
-                                        <button class="add-to-cart py-2">+ Add to Cart</button>
-                                    </div>
-                                    <div class="mt-3 text-center w-100" style="display: none;">
-                                        <button class="decreases-qty btn-qty">-</button>
-                                        <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
-                                        <button class="increase-qty btn-qty">+</button>
+                    <div class="" id="listProduct" >
+                        <div class="list-product-dapur" style="display: block;">
+                            <div class="row m-0 me-3 mt-2">
+                                <div class="col-3 mb-3">
+                                    <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
+                                    <div class="white-card p-4 rounded">
+                                        <div class="img-product text-center mt-2">
+                                            <img src="../assets/img/product/dapur/img-sambal-indofood.png" alt="" class="">
+                                        </div>
+                                        <div>
+                                            <label for="" class="mt-3 font-grey-16px">Indofood Sambal Pedas 275 ml</label>
+                                            <label for="" class="mt-3 price-product">Rp 14.000</label>
+                                        </div>
+                                        <div class="btn-add-cart mt-3" style="display: block;">
+                                            <button class="add-to-cart py-2">+ Add to Cart</button>
+                                        </div>
+                                        <div class="mt-3 text-center w-100" style="display: none;">
+                                            <button class="decreases-qty btn-qty">-</button>
+                                            <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
+                                            <button class="increase-qty btn-qty">+</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-    
-                            <div class="col-3 mb-3">
-                                <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
-                                <div class="white-card p-4 rounded">
-                                    <div class="img-product text-center mt-2">
-                                        <img src="../assets/img/product/dapur/img-minyak-sania.png" alt="" class="">
-                                    </div>
-                                    <div>
-                                        <label for="" class="mt-3 font-grey-16px">Sania Minyak Goreng Pouch 1 L</label>
-                                        <label for="" class="mt-3 price-product">Rp 19.000</label>
-                                    </div>
-                                    <div class="btn-add-cart mt-3" style="display: block;">
-                                        <button class="add-to-cart py-2">+ Add to Cart</button>
-                                    </div>
-                                    <div class="mt-3 text-center w-100" style="display: none;">
-                                        <button class="decreases-qty btn-qty">-</button>
-                                        <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
-                                        <button class="increase-qty btn-qty">+</button>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="col-3 mb-3">
-                                <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
-                                <div class="white-card p-4 rounded">
-                                    <div class="img-product text-center mt-2">
-                                        <img src="../assets/img/product/dapur/img-kecap-bango.png" alt="" class="">
-                                    </div>
-                                    <div>
-                                        <label for="" class="mt-3 font-grey-16px">BANGO Kecap Manis 135 ml</label>
-                                        <label for="" class="mt-3 price-product">Rp 13.000</label>
-                                    </div>
-                                    <div class="btn-add-cart mt-3" style="display: block;">
-                                        <button class="add-to-cart py-2">+ Add to Cart</button>
-                                    </div>
-                                    <div class="mt-3 text-center w-100" style="display: none;">
-                                        <button class="decreases-qty btn-qty">-</button>
-                                        <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
-                                        <button class="increase-qty btn-qty">+</button>
+        
+                                <div class="col-3 mb-3">
+                                    <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
+                                    <div class="white-card p-4 rounded">
+                                        <div class="img-product text-center mt-2">
+                                            <img src="../assets/img/product/dapur/img-royco.png" alt="" class="">
+                                        </div>
+                                        <div>
+                                            <label for="" class="mt-3 font-grey-16px">Royco Bumbu Penyedap Rasa Kaldu Ayam 220 g</label>
+                                            <label for="" class="mt-3 price-product">Rp 13.000</label>
+                                        </div>
+                                        <div class="btn-add-cart mt-3" style="display: block;">
+                                            <button class="add-to-cart py-2">+ Add to Cart</button>
+                                        </div>
+                                        <div class="mt-3 text-center w-100" style="display: none;">
+                                            <button class="decreases-qty btn-qty">-</button>
+                                            <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
+                                            <button class="increase-qty btn-qty">+</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-    
-                            <div class="col-3 mb-3">
-                                <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
-                                <div class="white-card p-4 rounded">
-                                    <div class="img-product text-center mt-2">
-                                        <img src="../assets/img/product/dapur/img-santan-kara.png" alt="" class="">
-                                    </div>
-                                    <div>
-                                        <label for="" class="mt-3 font-grey-16px">kara SUN Santan Kelapa Bubuk 20 g</label>
-                                        <label for="" class="mt-3 price-product">Rp 4.000</label>
-                                    </div>
-                                    <div class="btn-add-cart mt-3" style="display: block;">
-                                        <button class="add-to-cart py-2">+ Add to Cart</button>
-                                    </div>
-                                    <div class="mt-3 text-center w-100" style="display: none;">
-                                        <button class="decreases-qty btn-qty">-</button>
-                                        <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
-                                        <button class="increase-qty btn-qty">+</button>
+        
+                                <div class="col-3 mb-3">
+                                    <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
+                                    <div class="white-card p-4 rounded">
+                                        <div class="img-product text-center mt-2">
+                                            <img src="../assets/img/product/dapur/img-minyak-sania.png" alt="" class="">
+                                        </div>
+                                        <div>
+                                            <label for="" class="mt-3 font-grey-16px">Sania Minyak Goreng Pouch 1 L</label>
+                                            <label for="" class="mt-3 price-product">Rp 19.000</label>
+                                        </div>
+                                        <div class="btn-add-cart mt-3" style="display: block;">
+                                            <button class="add-to-cart py-2">+ Add to Cart</button>
+                                        </div>
+                                        <div class="mt-3 text-center w-100" style="display: none;">
+                                            <button class="decreases-qty btn-qty">-</button>
+                                            <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
+                                            <button class="increase-qty btn-qty">+</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-    
-                            <div class="col-3 mb-3">
-                                <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
-                                <div class="white-card p-4 rounded">
-                                    <div class="img-product text-center mt-2">
-                                        <img src="../assets/img/product/dapur/img-gula-psm.png" alt="" class="">
+        
+                                <div class="col-3 mb-3">
+                                    <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
+                                    <div class="white-card p-4 rounded">
+                                        <div class="img-product text-center mt-2">
+                                            <img src="../assets/img/product/dapur/img-kecap-bango.png" alt="" class="">
+                                        </div>
+                                        <div>
+                                            <label for="" class="mt-3 font-grey-16px">BANGO Kecap Manis 135 ml</label>
+                                            <label for="" class="mt-3 price-product">Rp 13.000</label>
+                                        </div>
+                                        <div class="btn-add-cart mt-3" style="display: block;">
+                                            <button class="add-to-cart py-2">+ Add to Cart</button>
+                                        </div>
+                                        <div class="mt-3 text-center w-100" style="display: none;">
+                                            <button class="decreases-qty btn-qty">-</button>
+                                            <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
+                                            <button class="increase-qty btn-qty">+</button>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <label for="" class="mt-3 font-grey-16px">PSM Gula Pasir Kristal Putih Premium 1 kg</label>
-                                        <label for="" class="mt-3 price-product">Rp 18.000</label>
+                                </div>
+        
+                                <div class="col-3 mb-3">
+                                    <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
+                                    <div class="white-card p-4 rounded">
+                                        <div class="img-product text-center mt-2">
+                                            <img src="../assets/img/product/dapur/img-santan-kara.png" alt="" class="">
+                                        </div>
+                                        <div>
+                                            <label for="" class="mt-3 font-grey-16px">kara SUN Santan Kelapa Bubuk 20 g</label>
+                                            <label for="" class="mt-3 price-product">Rp 4.000</label>
+                                        </div>
+                                        <div class="btn-add-cart mt-3" style="display: block;">
+                                            <button class="add-to-cart py-2">+ Add to Cart</button>
+                                        </div>
+                                        <div class="mt-3 text-center w-100" style="display: none;">
+                                            <button class="decreases-qty btn-qty">-</button>
+                                            <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
+                                            <button class="increase-qty btn-qty">+</button>
+                                        </div>
                                     </div>
-                                    <div class="btn-add-cart mt-3" style="display: block;">
-                                        <button class="add-to-cart py-2">+ Add to Cart</button>
-                                    </div>
-                                    <div class="mt-3 text-center w-100" style="display: none;">
-                                        <button class="decreases-qty btn-qty">-</button>
-                                        <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
-                                        <button class="increase-qty btn-qty">+</button>
+                                </div>
+        
+                                <div class="col-3 mb-3">
+                                    <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
+                                    <div class="white-card p-4 rounded">
+                                        <div class="img-product text-center mt-2">
+                                            <img src="../assets/img/product/dapur/img-gula-psm.png" alt="" class="">
+                                        </div>
+                                        <div>
+                                            <label for="" class="mt-3 font-grey-16px">PSM Gula Pasir Kristal Putih Premium 1 kg</label>
+                                            <label for="" class="mt-3 price-product">Rp 18.000</label>
+                                        </div>
+                                        <div class="btn-add-cart mt-3" style="display: block;">
+                                            <button class="add-to-cart py-2">+ Add to Cart</button>
+                                        </div>
+                                        <div class="mt-3 text-center w-100" style="display: none;">
+                                            <button class="decreases-qty btn-qty">-</button>
+                                            <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
+                                            <button class="increase-qty btn-qty">+</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row m-0 me-3 mt-2 list-product-rumah"></div>
-                        <div class="row m-0 me-3 mt-2 list-product-makanan"></div>
-                        <div class="row m-0 me-3 mt-2 list-product-minuman"></div>
-                        <div class="row m-0 me-3 mt-2 list-product-rokok"></div>
-                        <div class="row m-0 me-3 mt-2 list-product-lain"></div>
-                    </div>
-                    
+                        <div class="list-product-rumah" style="display: none;">
+                            <div class="row m-0 me-3 mt-2">
+                                <div class="col-3 mb-3">
+                                    <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
+                                    <div class="white-card p-4 rounded">
+                                        <div class="img-product text-center mt-2">
+                                            <img src="../assets/img/product/rumah/img-detergen-daia.jpg" alt="" style="width: 130px;">
+                                        </div>
+                                        <div>
+                                            <label for="" class="mt-3 font-grey-16px">Daia Deterjen Bubuk + Softener Pink 470 g</label>
+                                            <label for="" class="mt-3 price-product">Rp 10.000</label>
+                                        </div>
+                                        <div class="btn-add-cart mt-3" style="display: block;">
+                                            <button class="add-to-cart py-2">+ Add to Cart</button>
+                                        </div>
+                                        <div class="mt-3 text-center w-100" style="display: none;">
+                                            <button class="decreases-qty btn-qty">-</button>
+                                            <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
+                                            <button class="increase-qty btn-qty">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-product-makanan" style="display: none;">
+                            <div class="row m-0 me-3 mt-2">
+                                <div class="col-3 mb-3">
+                                    <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
+                                    <div class="white-card p-4 rounded">
+                                        <div class="img-product text-center mt-2">
+                                            <img src="../assets/img/product/makanan/img-japota.jpg" alt="" style="width: 130px;">
+                                        </div>
+                                        <div>
+                                            <label for="" class="mt-3 font-grey-16px">Japota Keripik Kentang Rasa Sambal Bawang 68 g</label>
+                                            <label for="" class="mt-3 price-product">Rp 9.000</label>
+                                        </div>
+                                        <div class="btn-add-cart mt-3" style="display: block;">
+                                            <button class="add-to-cart py-2">+ Add to Cart</button>
+                                        </div>
+                                        <div class="mt-3 text-center w-100" style="display: none;">
+                                            <button class="decreases-qty btn-qty">-</button>
+                                            <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
+                                            <button class="increase-qty btn-qty">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-product-minuman" style="display: none;">
+                            <div class="row m-0 me-3 mt-2">
+                                <div class="col-3 mb-3">
+                                    <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
+                                    <div class="white-card p-4 rounded">
+                                        <div class="img-product text-center mt-2">
+                                            <img src="../assets/img/product/minuman/img-teh-botol-tawar.jpg" alt="" style="width: 130px;">
+                                        </div>
+                                        <div>
+                                            <label for="" class="mt-3 font-grey-16px">Tehbotol Sosro Tawar 350 ml</label>
+                                            <label for="" class="mt-3 price-product">Rp 5.000</label>
+                                        </div>
+                                        <div class="btn-add-cart mt-3" style="display: block;">
+                                            <button class="add-to-cart py-2">+ Add to Cart</button>
+                                        </div>
+                                        <div class="mt-3 text-center w-100" style="display: none;">
+                                            <button class="decreases-qty btn-qty">-</button>
+                                            <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
+                                            <button class="increase-qty btn-qty">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-product-rokok" style="display: none;">
+                            <div class="row m-0 me-3 mt-2">
+                                <div class="col-3 mb-3">
+                                    <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
+                                    <div class="white-card p-4 rounded">
+                                        <div class="img-product text-center mt-2">
+                                            <img src="../assets/img/product/rokok/img-rokok-camel-yellow.jpg" alt="" style="width: 130px;">
+                                        </div>
+                                        <div>
+                                            <label for="" class="mt-3 font-grey-16px">CAMEL Yellow Rokok 20 Batang</label>
+                                            <label for="" class="mt-3 price-product">Rp 32.000</label>
+                                        </div>
+                                        <div class="btn-add-cart mt-3" style="display: block;">
+                                            <button class="add-to-cart py-2">+ Add to Cart</button>
+                                        </div>
+                                        <div class="mt-3 text-center w-100" style="display: none;">
+                                            <button class="decreases-qty btn-qty">-</button>
+                                            <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
+                                            <button class="increase-qty btn-qty">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-product-lain" style="display: none;">
+                            <div class="row m-0 me-3 mt-2">
+                                <div class="col-3 mb-3">
+                                    <div class="product-selected py-1 px-2" style="display: none;">Terpilih</div>
+                                    <div class="white-card p-4 rounded">
+                                        <div class="img-product text-center mt-2">
+                                            <img src="../assets/img/product/lain/img-koyo.jpg" alt="" style="width: 130px;">
+                                        </div>
+                                        <div>
+                                            <label for="" class="mt-3 font-grey-16px">Cabe Koyo 10 Lembar</label>
+                                            <label for="" class="mt-3 price-product">Rp 22.000</label>
+                                        </div>
+                                        <div class="btn-add-cart mt-3" style="display: block;">
+                                            <button class="add-to-cart py-2">+ Add to Cart</button>
+                                        </div>
+                                        <div class="mt-3 text-center w-100" style="display: none;">
+                                            <button class="decreases-qty btn-qty">-</button>
+                                            <input type="tel" name="qty" value="0" class="input-qty text-center mx-2"/>
+                                            <button class="increase-qty btn-qty">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>  
                 </div>
             </div>
         </div>
@@ -349,5 +470,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/menu.js"></script>
   </body>
 </html>

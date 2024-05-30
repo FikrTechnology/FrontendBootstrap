@@ -241,6 +241,11 @@ body{
     color: #616161;
 }
 
+.category-selected{
+    background: #3C91A4;
+    color: white;
+}
+
 .product-selected{
     position: relative;
     float: right;
