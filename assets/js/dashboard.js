@@ -19,5 +19,5 @@ function history(){
 }
 
 function report(){
-    window.location = "dashboardReport.html"
+    window.location = "dashboardReport.html";
 }

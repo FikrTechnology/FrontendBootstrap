@@ -3,7 +3,7 @@
 }
 
 body{
-    overflow-y: hidden;
+    overflow-y: none;
     overflow-x: hidden;
 }
 
