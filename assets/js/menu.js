@@ -367,9 +367,11 @@ function addToCart(index, cat, data) {
     console.log(product);
     console.log(cart);
     if (cart[product.productName]) {
+        cart[product.productName].subTotal += cart[product.productName].amount;
         cart[product.productName].qty += 1;
     } else {
-        cart[product.productName] = { ...product, qty: 1 };
+        var subTotal = product.amount;
+        cart[product.productName] = { ...product, qty: 1, index: index, subTotal: subTotal, };
     }
     total += product.amount;
     displayCart();
@@ -405,6 +407,12 @@ function placeOrder(){
     sessionStorage.setItem('total', total);
     sessionStorage.setItem('cart', JSON.stringify(cart));
     sessionStorage.setItem('listCart', JSON.stringify(listCart));
+    sessionStorage.setItem('todataProductDapurtal', JSON.stringify(dataProductDapur));
+    sessionStorage.setItem('dataProductRumah', JSON.stringify(dataProductRumah));
+    sessionStorage.setItem('dataProductMakanan', JSON.stringify(dataProductMakanan));
+    sessionStorage.setItem('dataProductMinuman', JSON.stringify(dataProductMinuman));
+    sessionStorage.setItem('dataProductRokok', JSON.stringify(dataProductRokok));
+    sessionStorage.setItem('dataProductLain', JSON.stringify(dataProductLain));
 
     window.location = 'dashboardOrder.html';
 }
