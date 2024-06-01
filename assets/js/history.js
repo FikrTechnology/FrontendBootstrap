@@ -2,11 +2,11 @@ const transactionListElement = document.getElementById('listHistory');
 const receiptListElement = document.getElementById('receiptList');
 const emptyHistoryElement = document.getElementById('emptyHistory');
 const receiptElement = document.getElementById('receipt');
-var data = JSON.parse(localStorage.getItem('transactionHistory'));
+var data = JSON.parse(localStorage.getItem('transactionHistory')) || [];
 
 function loadDataHistory() {
     if (data.length > 0) {
-        emptyHistoryElement.style.display = 'none';
+        emptyHistoryElement.style.display = 'block';
         data.forEach((transaction, index) => {
             const transactionElement = document.createElement('div');
             transactionElement.className = 'col-12 p-0';
@@ -37,6 +37,9 @@ window.loadReceipt = (index, id) => {
     var element = document.getElementById(id);
     $('.list-history').removeClass('history-selected');
     element.classList.add('history-selected');
+
+    emptyHistoryElement.style.display = 'none';
+
     const transaction = data[index];
     receiptListElement.innerHTML = '';
     for (const [key, item] of Object.entries(transaction.receipt)) {

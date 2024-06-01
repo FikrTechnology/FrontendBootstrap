@@ -11,7 +11,7 @@ var cash = 0;
 var moneyChange = 0;
 var sumQty = parseInt(sessionStorage.getItem("sumQty"));
 
-var history = [
+var dataHistory = [
     {
         "total": 54000,
         "cash": 100000,
@@ -164,6 +164,7 @@ function addToCart(productName) {
     }
     sessionStorage.setItem('total', total);
     sessionStorage.setItem('cart', JSON.stringify(cart));
+    sessionStorage.setItem('sumQty', sumQty);
     listProdukConfirm();
 }
 
@@ -178,6 +179,7 @@ function removeFromCart(productName) {
         }
         sessionStorage.setItem('total', total);
         sessionStorage.setItem('cart', JSON.stringify(cart));
+        sessionStorage.setItem('sumQty', sumQty);
         listProdukConfirm();
     }
 }
@@ -190,6 +192,7 @@ function deleteFromCart(productName) {
 
         sessionStorage.setItem('cart', JSON.stringify(cart));
         sessionStorage.setItem('total', total);
+        sessionStorage.setItem('sumQty', sumQty);
         listProdukConfirm();
     }
 }
@@ -206,7 +209,6 @@ function listProdukConfirm() {
     }
 
     Object.keys(cart).forEach(key => {
-        console.log('2');
         const item = cart[key];
         const cartItemDiv = document.createElement('div');
         cartItemDiv.className = 'cart-item';
@@ -246,19 +248,32 @@ function listProdukConfirm() {
     }
 }
 
-function donePayment(){
+function donePayment(method){
     console.log(moneyChange);
-    if((moneyChange == '-') || (moneyChange == undefined) || (moneyChange == "") || (moneyChange <= 0)){
+    console.log(total);
+    if(((method == "trfMethod") && ((isNaN(total)) || (total <= 0))) || (($('#cashMethod').css('display') == 'block') && ((moneyChange == '-') || (moneyChange == undefined) || (moneyChange == "") || (moneyChange <= 0) || (isNaN(moneyChange) || (total <= 0))))){
         alert('Harap Pilih atau Masukkan Nominal Uang Pas');
+    }else if((method == "trfMethod") && ((!isNaN(total)) || (total >= 0))){
+        cash = total;
+        moneyChange = cash - total;
+        saveTransaction();
+        sessionStorage.removeItem('cart');
+        sessionStorage.removeItem('total');
+        sessionStorage.removeItem('sumQty');
+        sessionStorage.removeItem('listCart');
+        window.location = 'dashboardHistory.html';
     }else{
         saveTransaction();
-        sessionStorage.setItem('cart', JSON.stringify(cart));
+        sessionStorage.removeItem('cart');
+        sessionStorage.removeItem('total');
+        sessionStorage.removeItem('sumQty');
+        sessionStorage.removeItem('listCart');
         window.location = 'dashboardHistory.html';
     }
 }
 
 function saveTransaction() {
-    let transactionHistory = JSON.parse(localStorage.getItem('transactionHistory')) || history;
+    let transactionHistory = JSON.parse(localStorage.getItem('transactionHistory')) || dataHistory;
     const newTransaction = {
         "total": total,
         "cash": cash,
@@ -276,7 +291,7 @@ function saveTransaction() {
     localStorage.setItem('transactionHistory', JSON.stringify(transactionHistory));
 
     // Update the original transactions array (if required)
-    history.push(newTransaction);
+    dataHistory.push(newTransaction);
 }
 
 function dateNow(){

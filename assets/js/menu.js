@@ -1,7 +1,7 @@
 var listCart = [];
-var cart = {};
-var total = 0;
-var sumQty = 0;
+var cart = JSON.parse(sessionStorage.getItem("cart")) || {};
+var total = parseInt(sessionStorage.getItem("total")) || 0;
+var sumQty = parseInt(sessionStorage.getItem("sumQty")) || 0;
 var dataProductDapur = [];
 var dataProductRumah = [];
 var dataProductMakanan = [];
@@ -107,6 +107,15 @@ function loadProduct(){
     initProductMinuman(dataProductMinuman);
     initProductRokok(dataProductRokok);
     initProductLain(dataProductLain);
+
+    if(Object.keys(cart).length === 0){
+        $('#emptyCart').show();
+        $('#parentCart').hide();
+    }else{
+        $('#emptyCart').hide();
+        $('#parentCart').show();
+        displayCart();
+    }
 }
 
 function initProductDapur(listProduct){
@@ -382,27 +391,54 @@ function addToCart(index, cat, data) {
 function displayCart() {
     const cartDiv = document.getElementById('cart');
     cartDiv.innerHTML = '';
-    Object.values(cart).forEach(item => {
-        const cartItemDiv = document.createElement('div');
-        cartItemDiv.className = 'cart-item';
-        cartItemDiv.innerHTML = `
-            <div class="">
-                <div class="row">
-                    <div class="col-3 p-0">
-                        <img src="${item.logo}" alt="" style="width: 100px;">
+
+    if(Object.keys(cart).length === 0){
+        Object.values(cart).forEach(item => {
+            const cartItemDiv = document.createElement('div');
+            cartItemDiv.className = 'cart-item';
+            cartItemDiv.innerHTML = `
+                <div class="">
+                    <div class="row">
+                        <div class="col-3 p-0">
+                            <img src="${item.logo}" alt="" style="width: 100px;">
+                        </div>
+                        <div class="col-9 ps-3">
+                            <label for="" class="font-grey-14px">${item.productName}</label><br>
+                            <label for="" class="price-product my-2">Rp ${item.amount}</label><br>
+                            <label for="" class="font-grey-12px">${item.qty}x</label>
+                        </div>
                     </div>
-                    <div class="col-9 ps-3">
-                        <label for="" class="font-grey-14px">${item.productName}</label><br>
-                        <label for="" class="price-product my-2">Rp ${item.amount}</label><br>
-                        <label for="" class="font-grey-12px">${item.qty}x</label>
-                    </div>
+                    <hr>
                 </div>
-                <hr>
-            </div>
-        `;
-        $('#total').html('Rp '+total);
-        cartDiv.appendChild(cartItemDiv);
-    });
+            `;
+            $('#total').html('Rp '+total);
+            cartDiv.appendChild(cartItemDiv);
+        });
+    }else{
+        Object.keys(cart).forEach(key => {
+            const item = cart[key];
+            console.log(item);
+            const cartItemDiv = document.createElement('div');
+            cartItemDiv.className = 'cart-item';
+            cartItemDiv.innerHTML = `
+                <div class="">
+                    <div class="row">
+                        <div class="col-3 p-0">
+                            <img src="${item.logo}" alt="" style="width: 100px;">
+                        </div>
+                        <div class="col-9 ps-3">
+                            <label for="" class="font-grey-14px">${item.productName}</label><br>
+                            <label for="" class="price-product my-2">Rp ${item.amount}</label><br>
+                            <label for="" class="font-grey-12px">${item.qty}x</label>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            `;
+            $('#total').html('Rp '+total);
+            cartDiv.appendChild(cartItemDiv);
+        });
+    }
 }
 
 function placeOrder(){
@@ -410,7 +446,7 @@ function placeOrder(){
     sessionStorage.setItem('total', total);
     sessionStorage.setItem('cart', JSON.stringify(cart));
     sessionStorage.setItem('listCart', JSON.stringify(listCart));
-    sessionStorage.setItem('todataProductDapurtal', JSON.stringify(dataProductDapur));
+    sessionStorage.setItem('dataProductDapur', JSON.stringify(dataProductDapur));
     sessionStorage.setItem('dataProductRumah', JSON.stringify(dataProductRumah));
     sessionStorage.setItem('dataProductMakanan', JSON.stringify(dataProductMakanan));
     sessionStorage.setItem('dataProductMinuman', JSON.stringify(dataProductMinuman));
