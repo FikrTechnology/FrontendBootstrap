@@ -9,6 +9,66 @@ var dataProductLain = JSON.parse(sessionStorage.getItem('dataProductLain'));
 var total = parseInt(sessionStorage.getItem("total"));
 var cash = 0;
 var moneyChange = 0;
+var sumQty = parseInt(sessionStorage.getItem("sumQty"));
+
+var history = [
+    {
+        "total": 54000,
+        "cash": 100000,
+        "moneyChange": 46000,
+        "dateTime": "Senin, 1 Juli 2024 Jam 12:58 WIB",
+        "outlet": "M1 - Menara BNI Pejompongan",
+        "sumQty": 4,
+        "receipt": {
+            "Indofood Sambal Pedas 275 ml": {
+                "logo": "../assets/img/product/dapur/img-sambal-indofood.png",
+                "amount": 14000,
+                "category": "dapur",
+                "productName": "Indofood Sambal Pedas 275 ml",
+                "qty": 2,
+                "index": "0",
+                "subTotal": 28000
+            },
+            "Royco Bumbu Penyedap Rasa Kaldu Ayam 220 g": {
+                "logo": "../assets/img/product/dapur/img-royco.png",
+                "amount": 13000,
+                "category": "dapur",
+                "productName": "Royco Bumbu Penyedap Rasa Kaldu Ayam 220 g",
+                "qty": 2,
+                "index": "1",
+                "subTotal": 26000
+            },
+        },
+    },
+    {
+        "total":37000,
+        "cash":50000,
+        "moneyChange":13000,
+        "dateTime":"Senin, 1 Juli 2024 Jam 15:40 WIB ",
+        "outlet":"M1 - Menara BNI Pejompongan",
+        "sumQty":2,
+        "receipt":{
+           "CAMEL Yellow Rokok 20 Batang":{
+              "logo":"../assets/img/product/rokok/img-rokok-camel-yellow.jpg",
+              "amount":32000,
+              "category":"rokok",
+              "productName":"CAMEL Yellow Rokok 20 Batang",
+              "qty":1,
+              "index":"0",
+              "subTotal":32000
+           },
+           "Tehbotol Sosro Tawar 350 ml":{
+              "logo":"../assets/img/product/minuman/img-teh-botol-tawar.jpg",
+              "amount":5000,
+              "category":"minuman",
+              "productName":"Tehbotol Sosro Tawar 350 ml",
+              "qty":1,
+              "index":"0",
+              "subTotal":5000
+           }
+        }
+    },
+];
 
 function convertIDR(idr){
     return idr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -97,6 +157,7 @@ function chooseMoney(param){
 function addToCart(productName) {
 
     if (cart[productName]) {
+        sumQty += 1;
         total += cart[productName].amount;
         cart[productName].subTotal += cart[productName].amount;
         cart[productName].qty += 1;
@@ -108,6 +169,7 @@ function addToCart(productName) {
 
 function removeFromCart(productName) {
     if (cart[productName]) {
+        sumQty -= 1;
         total -= cart[productName].amount;
         cart[productName].subTotal -= cart[productName].amount;
         cart[productName].qty -= 1;
@@ -122,6 +184,7 @@ function removeFromCart(productName) {
 
 function deleteFromCart(productName) {
     if (cart[productName]) {
+        sumQty -= cart[productName].qty;
         total -= cart[productName].subTotal;
         delete cart[productName];
 
@@ -181,4 +244,52 @@ function listProdukConfirm() {
         $('#totalForTF').html('Rp '+ convertIDR(total));
         $('#moneyChange').html('Rp '+ convertIDR(moneyChange));
     }
+}
+
+function donePayment(){
+    console.log(moneyChange);
+    if((moneyChange == '-') || (moneyChange == undefined) || (moneyChange == "") || (moneyChange <= 0)){
+        alert('Harap Pilih atau Masukkan Nominal Uang Pas');
+    }else{
+        saveTransaction();
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        window.location = 'dashboardHistory.html';
+    }
+}
+
+function saveTransaction() {
+    let transactionHistory = JSON.parse(localStorage.getItem('transactionHistory')) || history;
+    const newTransaction = {
+        "total": total,
+        "cash": cash,
+        "moneyChange": moneyChange,
+        "dateTime": dateNow(),
+        "outlet": "M1 - Menara BNI Pejompongan",
+        "sumQty": sumQty,
+        "receipt": cart,
+    };
+
+    // Add new transaction to the array
+    transactionHistory.push(newTransaction);
+
+    // Update localStorage with the new transaction
+    localStorage.setItem('transactionHistory', JSON.stringify(transactionHistory));
+
+    // Update the original transactions array (if required)
+    history.push(newTransaction);
+}
+
+function dateNow(){
+    var dateTime = new Date();
+    if (dateTime.getTimezoneOffset() == 0) (a=dateTime.getTime() + ( 7 *60*60*1000))
+    else (a=dateTime.getTime());
+    dateTime.setTime(a);
+    var yearNow = dateTime.getFullYear();
+    var monthNow = dateTime.getMonth() + 1;
+    var dayNow = dateTime.getDate();
+    var hariarray=new Array("Minggu,","Senin,","Selasa,","Rabu,","Kamis,","Jum'at,","Sabtu,");
+    var bulanarray=new Array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","Nopember","Desember");
+    var dateNow = hariarray[dayNow]+" "+dayNow+" "+bulanarray[monthNow]+" "+yearNow+" Jam " + ((dateTime.getHours() < 10) ? "0" : "") + dateTime.getHours() + ":" + ((dateTime.getMinutes() < 10)? "0" : "") + dateTime.getMinutes() + (" WIB ");
+    
+    return dateNow;
 }

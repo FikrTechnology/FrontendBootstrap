@@ -1,6 +1,7 @@
 var listCart = [];
 var cart = {};
 var total = 0;
+var sumQty = 0;
 var dataProductDapur = [];
 var dataProductRumah = [];
 var dataProductMakanan = [];
@@ -374,6 +375,7 @@ function addToCart(index, cat, data) {
         cart[product.productName] = { ...product, qty: 1, index: index, subTotal: subTotal, };
     }
     total += product.amount;
+    sumQty += 1;
     displayCart();
 }
 
@@ -404,6 +406,7 @@ function displayCart() {
 }
 
 function placeOrder(){
+    sessionStorage.setItem('sumQty', sumQty);
     sessionStorage.setItem('total', total);
     sessionStorage.setItem('cart', JSON.stringify(cart));
     sessionStorage.setItem('listCart', JSON.stringify(listCart));

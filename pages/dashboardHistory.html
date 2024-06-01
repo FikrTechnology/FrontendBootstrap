@@ -11,7 +11,7 @@
     
     <link rel="stylesheet" href="../assets/css/style.css">
   </head>
-  <body>
+  <body onload="loadDataHistory()">
     
     <section class="dashboard d-flex bg-grey">
         <div class="history-left white-card w-15 h-100 border-end rounded-4">
@@ -92,82 +92,9 @@
                         </div>
                     </div>
 
-                    <div class="" id="listHistory">
-                        <div class="row p-5 me-1">
-                            <div class="col-12 white-card rounded-4 p-3 mb-3">
-                                <div class="row justify-content-center align-items-center">
-                                    <div class="col-1 text-center">
-                                        <img src="../assets/icons/ico-history-success.svg" alt="" style="width: 80px;">
-                                    </div>
-                                    <div class="col-10">
-                                        <label for="" class="transactionDateTime font-grey-12px">21 - 05 - 2024  11:00 WIB</label><br>
-                                        <label for="" class="branchCode mt-1">M1 - Menara BNI Pejompongan</label>
-                                    </div>
-                                    <div class="col-1 text-center">
-                                        <img src="../assets/icons/ico-arrow-right.svg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 white-card rounded-4 p-3 mb-3">
-                                <div class="row justify-content-center align-items-center">
-                                    <div class="col-1 text-center">
-                                        <img src="../assets/icons/ico-history-success.svg" alt="" style="width: 80px;">
-                                    </div>
-                                    <div class="col-10">
-                                        <label for="" class="transactionDateTime font-grey-12px">21 - 05 - 2024  11:00 WIB</label><br>
-                                        <label for="" class="branchCode mt-1">M2 - BSI Slipi</label>
-                                    </div>
-                                    <div class="col-1 text-center">
-                                        <img src="../assets/icons/ico-arrow-right.svg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 white-card rounded-4 p-3 mb-3">
-                                <div class="row justify-content-center align-items-center">
-                                    <div class="col-1 text-center">
-                                        <img src="../assets/icons/ico-history-success.svg" alt="" style="width: 80px;">
-                                    </div>
-                                    <div class="col-10">
-                                        <label for="" class="transactionDateTime font-grey-12px">21 - 05 - 2024  11:00 WIB</label><br>
-                                        <label for="" class="branchCode mt-1">M3 - BSI Pemuda</label>
-                                    </div>
-                                    <div class="col-1 text-center">
-                                        <img src="../assets/icons/ico-arrow-right.svg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 white-card rounded-4 p-3 mb-3">
-                                <div class="row justify-content-center align-items-center">
-                                    <div class="col-1 text-center">
-                                        <img src="../assets/icons/ico-history-success.svg" alt="" style="width: 80px;">
-                                    </div>
-                                    <div class="col-10">
-                                        <label for="" class="transactionDateTime font-grey-12px">21 - 05 - 2024  11:00 WIB</label><br>
-                                        <label for="" class="branchCode mt-1">M4 - BSI BSD</label>
-                                    </div>
-                                    <div class="col-1 text-center">
-                                        <img src="../assets/icons/ico-arrow-right.svg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 white-card rounded-4 p-3 mb-3">
-                                <div class="row justify-content-center align-items-center">
-                                    <div class="col-1 text-center">
-                                        <img src="../assets/icons/ico-history-success.svg" alt="" style="width: 80px;">
-                                    </div>
-                                    <div class="col-10">
-                                        <label for="" class="transactionDateTime font-grey-12px">21 - 05 - 2024  11:00 WIB</label><br>
-                                        <label for="" class="branchCode mt-1">M5 - BSI Cengkareng</label>
-                                    </div>
-                                    <div class="col-1 text-center">
-                                        <img src="../assets/icons/ico-arrow-right.svg" alt="">
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="" >
+                        <div class="row p-5 me-1" id="listHistory">
+                            
                         </div>
                     </div>
                     
@@ -176,61 +103,22 @@
         </div>
 
         <div class="history-right w-25 h-100">
-            <div class="row justify-content-center h-100 border-start rounded-4 white-card">
-                <div class="col-12 text-center" id="emptyHistory" style="display: none;">
+            <div class="row justify-content-center align-items-center h-100 border-start rounded-4 white-card">
+                <div class="col-12 text-center" id="emptyHistory" style="display: block;">
                     <img src="../assets/img/dashboard/img-emty-cart.svg" alt="">
                     <div id="labelemptCart" class="text-center-18px-green">
                         Tidak ada transaksi pada rentang waktu ini
                     </div>
                 </div>
 
-                <div id="receipt" class="col-12 p-4" style="display: block;">
+                <div id="receipt" class="col-12 p-4" style="display: none;">
                     <div class="mb-4">
                         <label for="" class="font-grey-20px">Receipt</label>
                     </div>
 
                     <div id="receiptCard">
-                        <div class="white-card shadow p-4">
-                            <div class="product-list-receipt">
-                                <div class="row mb-2">
-                                    <div class="col-7 font-grey-12px">Indofood Sambal Pedas 275 ml</div>
-                                    <div class="col-1 font-grey-12px text-center">2</div>
-                                    <div class="col-2 font-grey-12px text-end">14.000</div>
-                                    <div class="col-2 font-grey-12px text-end">28.000</div>
-                                </div>
-    
-                                <div class="row mb-2">
-                                    <div class="col-7 font-grey-12px">Sania Minyak Goreng Pouch 1 L</div>
-                                    <div class="col-1 font-grey-12px text-center">2</div>
-                                    <div class="col-2 font-grey-12px text-end">19.000</div>
-                                    <div class="col-2 font-grey-12px text-end">38.000</div>
-                                </div>
-    
-                                <div class="row mb-2">
-                                    <div class="col-7 font-grey-12px">PSM Gula Pasir Kristal Putih Premium 1 kg</div>
-                                    <div class="col-1 font-grey-12px text-center">2</div>
-                                    <div class="col-2 font-grey-12px text-end">18.000</div>
-                                    <div class="col-2 font-grey-12px text-end">36.000</div>
-                                </div>
-                            </div>
-
-                            <hr style="border-top: 2px dashed #616161;">
-
-                            <div class="row mb-1">
-                                <div class="col-7 font-grey-12px">Total Belanja</div>
-                                <div class="col-1 font-grey-12px text-center" id="productSum">6</div>
-                                <div class="col-4 font-grey-12px text-end" id="totalSum">102.000</div>
-                            </div>
-
-                            <div class="row mb-1">
-                                <div class="col-8 font-grey-12px">Tunai</div>
-                                <div class="col-4 font-grey-12px text-end" id="cash">110.000</div>
-                            </div>
-
-                            <div class="row mb-1">
-                                <div class="col-8 font-grey-12px">Kembalian</div>
-                                <div class="col-4 font-grey-12px text-end" id="moneyChanges">8.000</div>
-                            </div>
+                        <div class="white-card shadow p-4" id="receiptList">
+                            
                         </div>
                     </div>
                 </div>
@@ -245,5 +133,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/history.js"></script>
   </body>
 </html>

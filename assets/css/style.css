@@ -378,3 +378,11 @@ body{
 .payment-method-selected{
     background: #ECF4F6;
 }
+
+.history-selected{
+    background: #E7EFF1;
+}
+
+.history-selected label{
+    color: #000000 !important;
+}
