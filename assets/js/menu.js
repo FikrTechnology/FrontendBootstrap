@@ -9,269 +9,277 @@ var dataProductMinuman = [];
 var dataProductRokok = [];
 var dataProductLain = [];
 
-var data = [
-    {
-        "logo": "../assets/img/product/dapur/img-sambal-indofood.png",
-        "amount": 14000,
-        "category": "dapur",
-        "productName": "Indofood Sambal Pedas 275 ml",
-    },
-    {
-        "logo": "../assets/img/product/dapur/img-royco.png",
-        "amount": 13000,
-        "category": "dapur",
-        "productName": "Royco Bumbu Penyedap Rasa Kaldu Ayam 220 g",
-    },
-    {
-        "logo": "../assets/img/product/dapur/img-minyak-sania.png",
-        "amount": 19000,
-        "category": "dapur",
-        "productName": "Sania Minyak Goreng Pouch 1 L",
-    },
-    {
-        "logo": "../assets/img/product/dapur/img-kecap-bango.png",
-        "amount": 13000,
-        "category": "dapur",
-        "productName": "BANGO Kecap Manis 135 ml",
-    },
-    {
-        "logo": "../assets/img/product/dapur/img-santan-kara.png",
-        "amount": 4000,
-        "category": "dapur",
-        "productName": "kara SUN Santan Kelapa Bubuk 20 g",
-    },
-    {
-        "logo": "../assets/img/product/dapur/img-gula-psm.png",
-        "amount": 18000,
-        "category": "dapur",
-        "productName": "PSM Gula Pasir Kristal Putih Premium 1 kg",
-    },
-    {
-        "logo": "../assets/img/product/rumah/img-detergen-daia.jpg",
-        "amount": 10000,
-        "category": "rumah",
-        "productName": "Daia Deterjen Bubuk + Softener Pink 470 g",
-    },
-    {
-        "logo": "../assets/img/product/rumah/img-karbol.png",
-        "amount": 15000,
-        "category": "rumah",
-        "productName": "Alfamart Karbol Wangi Anti Bakteri Cemara 750",
-    },
-    {
-        "logo": "../assets/img/product/rumah/img-tisue-multi.png",
-        "amount": 21000,
-        "category": "rumah",
-        "productName": "multi Facial Tissue 250 s",
-    },
-    {
-        "logo": "../assets/img/product/rumah/img-batre-eveready.png",
-        "amount": 20000,
-        "category": "rumah",
-        "productName": "EVEREADY Super Heavy Duty Baterai AA 1215 4 pcs",
-    },
-    {
-        "logo": "../assets/img/product/rumah/img-kispray.png",
-        "amount": 7000,
-        "category": "rumah",
-        "productName": "Kispray Violet Pewangi Pakaian Refill 280 ml",
-    },
-    {
-        "logo": "../assets/img/product/rumah/img-pewangi-downy.png",
-        "amount": 18000,
-        "category": "rumah",
-        "productName": "Downy Pelembut & Pewangi Pakaian",
-    },
-    {
-        "logo": "../assets/img/product/makanan/img-japota.jpg",
-        "amount": 9000,
-        "category": "makanan",
-        "productName": "Japota Keripik Kentang Rasa Sambal Bawang 68 g",
-    },
-    {
-        "logo": "../assets/img/product/makanan/img-kacang-garuda.png",
-        "amount": 25000,
-        "category": "makanan",
-        "productName": "garuda Kacang Kulit 375 g",
-    },
-    {
-        "logo": "../assets/img/product/makanan/img-kacang-telur.png",
-        "amount": 10000,
-        "category": "makanan",
-        "productName": "Gery Saluut Malkist Sweet Cheese 100 g",
-    },
-    {
-        "logo": "../assets/img/product/makanan/img-wafer-gery.png",
-        "amount": 13000,
-        "category": "makanan",
-        "productName": "Tango Wafer Vanilla Milk 115 g",
-    },
-    {
-        "logo": "../assets/img/product/makanan/img-wafer-milo.png",
-        "amount": 15000,
-        "category": "makanan",
-        "productName": "Kacang Telur Medan Premium 150 g",
-    },
-    {
-        "logo": "../assets/img/product/makanan/img-wafer-tango.png",
-        "amount": 6000,
-        "category": "makanan",
-        "productName": "MILO Choco Bar 15 g",
-    },
-    {
-        "logo": "../assets/img/product/minuman/img-teh-botol-tawar.jpg",
-        "amount": 5000,
-        "category": "minuman",
-        "productName": "Tehbotol Sosro Tawar 350 ml",
-    },
-    {
-        "logo": "../assets/img/product/minuman/img-cap-kaki-tiga.png",
-        "amount": 9000,
-        "category": "minuman",
-        "productName": "Cap Kaki Tiga Larutan Penyegar Jambu Kaleng",
-    },
-    {
-        "logo": "../assets/img/product/minuman/img-fruit-tea.png",
-        "amount": 8000,
-        "category": "minuman",
-        "productName": "FRUIT TEA Minuman Teh X-Treme",
-    },
-    {
-        "logo": "../assets/img/product/minuman/img-hemaviton.png",
-        "amount": 6000,
-        "category": "minuman",
-        "productName": "hemaviton Energy Drink",
-    },
-    {
-        "logo": "../assets/img/product/minuman/img-indomilk.png",
-        "amount": 6000,
-        "category": "minuman",
-        "productName": "INDOMILK Susu Cair Rasa Strawberry",
-    },
-    {
-        "logo": "../assets/img/product/minuman/img-redbull.png",
-        "amount": 10000,
-        "category": "minuman",
-        "productName": "Red Bull Kratingdaeng Energy Drink Gold",
-    },
-    {
-        "logo": "../assets/img/product/rokok/img-rokok-camel-yellow.jpg",
-        "amount": 32000,
-        "category": "rokok",
-        "productName": "CAMEL Yellow Rokok 20 Batang",
-    },
-    {
-        "logo": "../assets/img/product/rokok/img-clas-mild.png",
-        "amount": 25000,
-        "category": "rokok",
-        "productName": "CLAS MILD Rokok 12 Batang",
-    },
-    {
-        "logo": "../assets/img/product/rokok/img-djarum-black.png",
-        "amount": 35000,
-        "category": "rokok",
-        "productName": "DJARUM Black Rokok 16 Batang",
-    },
-    {
-        "logo": "../assets/img/product/rokok/img-djarum-king.png",
-        "amount": 23000,
-        "category": "rokok",
-        "productName": "DJARUM King Rokok 12 Batang",
-    },
-    {
-        "logo": "../assets/img/product/rokok/img-djarum-super.png",
-        "amount": 27000,
-        "category": "rokok",
-        "productName": "DJARUM Super Rokok 12 Batang",
-    },
-    {
-        "logo": "../assets/img/product/rokok/img-dunhill.png",
-        "amount": 32000,
-        "category": "rokok",
-        "productName": "DUNHILL Mild Rokok 16 Batang",
-    },
-    {
-        "logo": "../assets/img/product/rokok/img-esse-change.png",
-        "amount": 42000,
-        "category": "rokok",
-        "productName": "ESSE Change Rokok 20 Batang",
-    },
-    {
-        "logo": "../assets/img/product/lain/img-koyo.jpg",
-        "amount": 22000,
-        "category": "lain",
-        "productName": "Cabe Koyo 10 Lembar",
-    },
-    {
-        "logo": "../assets/img/product/lain/img-bejo-masuk-angin.png",
-        "amount": 17000,
-        "category": "lain",
-        "productName": "BEJO Obat Herbal Masuk Angin",
-    },
-    {
-        "logo": "../assets/img/product/lain/img-entrostop.png",
-        "amount": 15000,
-        "category": "lain",
-        "productName": "Entrostop Herbal box 15 ml 6 s",
-    },
-    {
-        "logo": "../assets/img/product/lain/img-freshcare.png",
-        "amount": 17000,
-        "category": "lain",
-        "productName": "FreshCare Minyak Angin Aromatherapy",
-    },
-    {
-        "logo": "../assets/img/product/lain/img-insto-dry.png",
-        "amount": 15000,
-        "category": "lain",
-        "productName": "INSTO Dry Eyes Obat Tetes Mata",
-    },
-    {
-        "logo": "../assets/img/product/lain/img-procold.png",
-        "amount": 6000,
-        "category": "lain",
-        "productName": "Procold Obat Flu 6 Kaplet",
-    },
-];
+// var data = [
+//     {
+//         "logo": "../assets/img/product/dapur/img-sambal-indofood.png",
+//         "amount": 14000,
+//         "category": "dapur",
+//         "productName": "Indofood Sambal Pedas 275 ml",
+//     },
+//     {
+//         "logo": "../assets/img/product/dapur/img-royco.png",
+//         "amount": 13000,
+//         "category": "dapur",
+//         "productName": "Royco Bumbu Penyedap Rasa Kaldu Ayam 220 g",
+//     },
+//     {
+//         "logo": "../assets/img/product/dapur/img-minyak-sania.png",
+//         "amount": 19000,
+//         "category": "dapur",
+//         "productName": "Sania Minyak Goreng Pouch 1 L",
+//     },
+//     {
+//         "logo": "../assets/img/product/dapur/img-kecap-bango.png",
+//         "amount": 13000,
+//         "category": "dapur",
+//         "productName": "BANGO Kecap Manis 135 ml",
+//     },
+//     {
+//         "logo": "../assets/img/product/dapur/img-santan-kara.png",
+//         "amount": 4000,
+//         "category": "dapur",
+//         "productName": "kara SUN Santan Kelapa Bubuk 20 g",
+//     },
+//     {
+//         "logo": "../assets/img/product/dapur/img-gula-psm.png",
+//         "amount": 18000,
+//         "category": "dapur",
+//         "productName": "PSM Gula Pasir Kristal Putih Premium 1 kg",
+//     },
+//     {
+//         "logo": "../assets/img/product/rumah/img-detergen-daia.jpg",
+//         "amount": 10000,
+//         "category": "rumah",
+//         "productName": "Daia Deterjen Bubuk + Softener Pink 470 g",
+//     },
+//     {
+//         "logo": "../assets/img/product/rumah/img-karbol.png",
+//         "amount": 15000,
+//         "category": "rumah",
+//         "productName": "Alfamart Karbol Wangi Anti Bakteri Cemara 750",
+//     },
+//     {
+//         "logo": "../assets/img/product/rumah/img-tisue-multi.png",
+//         "amount": 21000,
+//         "category": "rumah",
+//         "productName": "multi Facial Tissue 250 s",
+//     },
+//     {
+//         "logo": "../assets/img/product/rumah/img-batre-eveready.png",
+//         "amount": 20000,
+//         "category": "rumah",
+//         "productName": "EVEREADY Super Heavy Duty Baterai AA 1215 4 pcs",
+//     },
+//     {
+//         "logo": "../assets/img/product/rumah/img-kispray.png",
+//         "amount": 7000,
+//         "category": "rumah",
+//         "productName": "Kispray Violet Pewangi Pakaian Refill 280 ml",
+//     },
+//     {
+//         "logo": "../assets/img/product/rumah/img-pewangi-downy.png",
+//         "amount": 18000,
+//         "category": "rumah",
+//         "productName": "Downy Pelembut & Pewangi Pakaian",
+//     },
+//     {
+//         "logo": "../assets/img/product/makanan/img-japota.jpg",
+//         "amount": 9000,
+//         "category": "makanan",
+//         "productName": "Japota Keripik Kentang Rasa Sambal Bawang 68 g",
+//     },
+//     {
+//         "logo": "../assets/img/product/makanan/img-kacang-garuda.png",
+//         "amount": 25000,
+//         "category": "makanan",
+//         "productName": "garuda Kacang Kulit 375 g",
+//     },
+//     {
+//         "logo": "../assets/img/product/makanan/img-kacang-telur.png",
+//         "amount": 10000,
+//         "category": "makanan",
+//         "productName": "Gery Saluut Malkist Sweet Cheese 100 g",
+//     },
+//     {
+//         "logo": "../assets/img/product/makanan/img-wafer-gery.png",
+//         "amount": 13000,
+//         "category": "makanan",
+//         "productName": "Tango Wafer Vanilla Milk 115 g",
+//     },
+//     {
+//         "logo": "../assets/img/product/makanan/img-wafer-milo.png",
+//         "amount": 15000,
+//         "category": "makanan",
+//         "productName": "Kacang Telur Medan Premium 150 g",
+//     },
+//     {
+//         "logo": "../assets/img/product/makanan/img-wafer-tango.png",
+//         "amount": 6000,
+//         "category": "makanan",
+//         "productName": "MILO Choco Bar 15 g",
+//     },
+//     {
+//         "logo": "../assets/img/product/minuman/img-teh-botol-tawar.jpg",
+//         "amount": 5000,
+//         "category": "minuman",
+//         "productName": "Tehbotol Sosro Tawar 350 ml",
+//     },
+//     {
+//         "logo": "../assets/img/product/minuman/img-cap-kaki-tiga.png",
+//         "amount": 9000,
+//         "category": "minuman",
+//         "productName": "Cap Kaki Tiga Larutan Penyegar Jambu Kaleng",
+//     },
+//     {
+//         "logo": "../assets/img/product/minuman/img-fruit-tea.png",
+//         "amount": 8000,
+//         "category": "minuman",
+//         "productName": "FRUIT TEA Minuman Teh X-Treme",
+//     },
+//     {
+//         "logo": "../assets/img/product/minuman/img-hemaviton.png",
+//         "amount": 6000,
+//         "category": "minuman",
+//         "productName": "hemaviton Energy Drink",
+//     },
+//     {
+//         "logo": "../assets/img/product/minuman/img-indomilk.png",
+//         "amount": 6000,
+//         "category": "minuman",
+//         "productName": "INDOMILK Susu Cair Rasa Strawberry",
+//     },
+//     {
+//         "logo": "../assets/img/product/minuman/img-redbull.png",
+//         "amount": 10000,
+//         "category": "minuman",
+//         "productName": "Red Bull Kratingdaeng Energy Drink Gold",
+//     },
+//     {
+//         "logo": "../assets/img/product/rokok/img-rokok-camel-yellow.jpg",
+//         "amount": 32000,
+//         "category": "rokok",
+//         "productName": "CAMEL Yellow Rokok 20 Batang",
+//     },
+//     {
+//         "logo": "../assets/img/product/rokok/img-clas-mild.png",
+//         "amount": 25000,
+//         "category": "rokok",
+//         "productName": "CLAS MILD Rokok 12 Batang",
+//     },
+//     {
+//         "logo": "../assets/img/product/rokok/img-djarum-black.png",
+//         "amount": 35000,
+//         "category": "rokok",
+//         "productName": "DJARUM Black Rokok 16 Batang",
+//     },
+//     {
+//         "logo": "../assets/img/product/rokok/img-djarum-king.png",
+//         "amount": 23000,
+//         "category": "rokok",
+//         "productName": "DJARUM King Rokok 12 Batang",
+//     },
+//     {
+//         "logo": "../assets/img/product/rokok/img-djarum-super.png",
+//         "amount": 27000,
+//         "category": "rokok",
+//         "productName": "DJARUM Super Rokok 12 Batang",
+//     },
+//     {
+//         "logo": "../assets/img/product/rokok/img-dunhill.png",
+//         "amount": 32000,
+//         "category": "rokok",
+//         "productName": "DUNHILL Mild Rokok 16 Batang",
+//     },
+//     {
+//         "logo": "../assets/img/product/rokok/img-esse-change.png",
+//         "amount": 42000,
+//         "category": "rokok",
+//         "productName": "ESSE Change Rokok 20 Batang",
+//     },
+//     {
+//         "logo": "../assets/img/product/lain/img-koyo.jpg",
+//         "amount": 22000,
+//         "category": "lain",
+//         "productName": "Cabe Koyo 10 Lembar",
+//     },
+//     {
+//         "logo": "../assets/img/product/lain/img-bejo-masuk-angin.png",
+//         "amount": 17000,
+//         "category": "lain",
+//         "productName": "BEJO Obat Herbal Masuk Angin",
+//     },
+//     {
+//         "logo": "../assets/img/product/lain/img-entrostop.png",
+//         "amount": 15000,
+//         "category": "lain",
+//         "productName": "Entrostop Herbal box 15 ml 6 s",
+//     },
+//     {
+//         "logo": "../assets/img/product/lain/img-freshcare.png",
+//         "amount": 17000,
+//         "category": "lain",
+//         "productName": "FreshCare Minyak Angin Aromatherapy",
+//     },
+//     {
+//         "logo": "../assets/img/product/lain/img-insto-dry.png",
+//         "amount": 15000,
+//         "category": "lain",
+//         "productName": "INSTO Dry Eyes Obat Tetes Mata",
+//     },
+//     {
+//         "logo": "../assets/img/product/lain/img-procold.png",
+//         "amount": 6000,
+//         "category": "lain",
+//         "productName": "Procold Obat Flu 6 Kaplet",
+//     },
+// ];
 
-function loadProduct(){
-    for(var i = 0; i < data.length; i++){
-        var product = data[i];
-        var productCategory = product.category;
-        var productLogo = product.logo;
-        var productAmount = product.amount;
-        var productName = product.productName;
-
-        if(productCategory == "dapur"){
-            dataProductDapur.push(product);
-        }else if(productCategory == "rumah"){
-            dataProductRumah.push(product);
-        }else if(productCategory == "makanan"){
-            dataProductMakanan.push(product);
-        }else if(productCategory == "minuman"){
-            dataProductMinuman.push(product);
-        }else if(productCategory == "rokok"){
-            dataProductRokok.push(product);
-        }else if(productCategory == "lain"){
-            dataProductLain.push(product);
+async function loadProduct(){
+    await fetch("http://10.70.135.82:3000/products", {
+        method: 'GET'
+    }).then(res => {
+        return res.json();
+    }).then(data => {
+        console.log(data.data);
+        for(var i = 0; i < data.data.length; i++){
+            var product = data.data[i];
+            console.log(product);
+            var productCategory = product.category;
+            var productLogo = product.logo;
+            var productAmount = product.amount;
+            var productName = product.productName;
+    
+            if(productCategory == "dapur"){
+                dataProductDapur.push(product);
+            }else if(productCategory == "rumah"){
+                dataProductRumah.push(product);
+            }else if(productCategory == "makanan"){
+                dataProductMakanan.push(product);
+            }else if(productCategory == "minuman"){
+                dataProductMinuman.push(product);
+            }else if(productCategory == "rokok"){
+                dataProductRokok.push(product);
+            }else if(productCategory == "lain"){
+                dataProductLain.push(product);
+            }
         }
-    }
-
-    initProductDapur(dataProductDapur);
-    initProductRumah(dataProductRumah);
-    initProductMakanan(dataProductMakanan);
-    initProductMinuman(dataProductMinuman);
-    initProductRokok(dataProductRokok);
-    initProductLain(dataProductLain);
-
-    if(Object.keys(cart).length === 0){
-        $('#emptyCart').show();
-        $('#parentCart').hide();
-    }else{
-        $('#emptyCart').hide();
-        $('#parentCart').show();
-        displayCart();
-    }
+    
+        initProductDapur(dataProductDapur);
+        initProductRumah(dataProductRumah);
+        initProductMakanan(dataProductMakanan);
+        initProductMinuman(dataProductMinuman);
+        initProductRokok(dataProductRokok);
+        initProductLain(dataProductLain);
+    
+        if(Object.keys(cart).length === 0){
+            $('#emptyCart').show();
+            $('#parentCart').hide();
+        }else{
+            $('#emptyCart').hide();
+            $('#parentCart').show();
+            displayCart();
+        }
+    })
 }
 
 function initProductDapur(listProduct){
