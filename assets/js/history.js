@@ -2,45 +2,75 @@ const transactionListElement = document.getElementById('listHistory');
 const receiptListElement = document.getElementById('receiptList');
 const emptyHistoryElement = document.getElementById('emptyHistory');
 const receiptElement = document.getElementById('receipt');
-var dataReceipt = [];
+// for Dummy
+var data = JSON.parse(localStorage.getItem('transactionHistory')) || [];
+// var dataReceipt = [];
 
-async function loadDataHistory() {
-    await fetch("http://10.70.135.82:3000/transactionHistory", {
-        method: 'GET'
-    }).then(res => {
-        return res.json();
-    }).then(data => {
-        console.log(data.data);
-        if (data.data.length > 0) {
-            emptyHistoryElement.style.display = 'block';
-            data.data.forEach((transactionHistory, index) => {
-                var loadReceipt = JSON.parse(transactionHistory.log_transaction);
-                const transactionElement = document.createElement('div');
-                transactionElement.className = 'col-12 p-0';
-                transactionElement.innerHTML = `
-                    <div class="col-12 white-card rounded-4 p-3 mb-3 list-history") id="listHistory${index}" onclick="loadReceipt(${index}, 'listHistory${index}')">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-1 text-center">
-                                <img src="../assets/icons/ico-history-success.svg" alt="" style="width: 80px;">
-                            </div>
-                            <div class="col-10">
-                                <label for="" class="transactionDateTime font-grey-12px">${loadReceipt.dateTime}</label><br>
-                                <label for="" class="branchCode mt-1 fc-grey">${loadReceipt.outlet}</label>
-                            </div>
-                            <div class="col-1 text-center">
-                                <img src="../assets/icons/ico-arrow-right.svg" alt="">
-                            </div>
+// For Dummy
+function loadDataHistory() {
+    if (data.length > 0) {
+        emptyHistoryElement.style.display = 'block';
+        data.forEach((transaction, index) => {
+            const transactionElement = document.createElement('div');
+            transactionElement.className = 'col-12 p-0';
+            transactionElement.innerHTML = `
+                <div class="col-12 white-card rounded-4 p-3 mb-3 list-history") id="listHistory${index}" onclick="loadReceipt(${index}, 'listHistory${index}')">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-1 text-center">
+                            <img src="../assets/icons/ico-history-success.svg" alt="" style="width: 80px;">
                         </div>
-                    </div>
-                `;
-                transactionListElement.appendChild(transactionElement);
-                dataReceipt.push(loadReceipt);
-            });
-        } else {
-            emptyHistoryElement.style.display = 'block';
-        }
-    });
+                        <div class="col-10">
+                            <label for="" class="transactionDateTime font-grey-12px">${transaction.dateTime}</label><br>
+                            <label for="" class="branchCode mt-1 fc-grey">${transaction.outlet}</label>
+                        </div>
+                        <div class="col-1 text-center">
+                            <img src="../assets/icons/ico-arrow-right.svg" alt="">
+                            `;
+            transactionListElement.appendChild(transactionElement);
+        });
+    } else {
+        emptyHistoryElement.style.display = 'block';
+    }
 }
+
+
+// async function loadDataHistory() {
+//     await fetch("http://192.168.8.105:3000/transactionHistory", {
+//         method: 'GET'
+//     }).then(res => {
+//         return res.json();
+//     }).then(data => {
+//         console.log(data.data);
+//         if (data.data.length > 0) {
+//             emptyHistoryElement.style.display = 'block';
+//             data.data.forEach((transactionHistory, index) => {
+//                 var loadReceipt = JSON.parse(transactionHistory.log_transaction);
+//                 const transactionElement = document.createElement('div');
+//                 transactionElement.className = 'col-12 p-0';
+//                 transactionElement.innerHTML = `
+//                     <div class="col-12 white-card rounded-4 p-3 mb-3 list-history") id="listHistory${index}" onclick="loadReceipt(${index}, 'listHistory${index}')">
+//                         <div class="row justify-content-center align-items-center">
+//                             <div class="col-1 text-center">
+//                                 <img src="../assets/icons/ico-history-success.svg" alt="" style="width: 80px;">
+//                             </div>
+//                             <div class="col-10">
+//                                 <label for="" class="transactionDateTime font-grey-12px">${loadReceipt.dateTime}</label><br>
+//                                 <label for="" class="branchCode mt-1 fc-grey">${loadReceipt.outlet}</label>
+//                             </div>
+//                             <div class="col-1 text-center">
+//                                 <img src="../assets/icons/ico-arrow-right.svg" alt="">
+//                             </div>
+//                         </div>
+//                     </div>
+//                 `;
+//                 transactionListElement.appendChild(transactionElement);
+//                 dataReceipt.push(loadReceipt);
+//             });
+//         } else {
+//             emptyHistoryElement.style.display = 'block';
+//         }
+//     });
+// }
 
 window.loadReceipt = (index, id) => {
     var element = document.getElementById(id);
@@ -49,7 +79,8 @@ window.loadReceipt = (index, id) => {
 
     emptyHistoryElement.style.display = 'none';
 
-    const transaction = dataReceipt[index];
+    const transaction = data[index];
+    // const transaction = dataReceipt[index];
     receiptListElement.innerHTML = '';
     for (const [key, item] of Object.entries(transaction.receipt)) {
         const itemElement = document.createElement('div');

@@ -11,64 +11,64 @@ var cash = 0;
 var moneyChange = 0;
 var sumQty = parseInt(sessionStorage.getItem("sumQty"));
 
-// var dataHistory = [
-//     {
-//         "total": 54000,
-//         "cash": 100000,
-//         "moneyChange": 46000,
-//         "dateTime": "Senin, 1 Juni 2024 Jam 12:58 WIB",
-//         "outlet": "M1 - Menara BNI Pejompongan",
-//         "sumQty": 4,
-//         "receipt": {
-//             "Indofood Sambal Pedas 275 ml": {
-//                 "logo": "../assets/img/product/dapur/img-sambal-indofood.png",
-//                 "amount": 14000,
-//                 "category": "dapur",
-//                 "productName": "Indofood Sambal Pedas 275 ml",
-//                 "qty": 2,
-//                 "index": "0",
-//                 "subTotal": 28000
-//             },
-//             "Royco Bumbu Penyedap Rasa Kaldu Ayam 220 g": {
-//                 "logo": "../assets/img/product/dapur/img-royco.png",
-//                 "amount": 13000,
-//                 "category": "dapur",
-//                 "productName": "Royco Bumbu Penyedap Rasa Kaldu Ayam 220 g",
-//                 "qty": 2,
-//                 "index": "1",
-//                 "subTotal": 26000
-//             },
-//         },
-//     },
-//     {
-//         "total":37000,
-//         "cash":50000,
-//         "moneyChange":13000,
-//         "dateTime":"Senin, 1 Juni 2024 Jam 15:40 WIB ",
-//         "outlet":"M1 - Menara BNI Pejompongan",
-//         "sumQty":2,
-//         "receipt":{
-//            "CAMEL Yellow Rokok 20 Batang":{
-//               "logo":"../assets/img/product/rokok/img-rokok-camel-yellow.jpg",
-//               "amount":32000,
-//               "category":"rokok",
-//               "productName":"CAMEL Yellow Rokok 20 Batang",
-//               "qty":1,
-//               "index":"0",
-//               "subTotal":32000
-//            },
-//            "Tehbotol Sosro Tawar 350 ml":{
-//               "logo":"../assets/img/product/minuman/img-teh-botol-tawar.jpg",
-//               "amount":5000,
-//               "category":"minuman",
-//               "productName":"Tehbotol Sosro Tawar 350 ml",
-//               "qty":1,
-//               "index":"0",
-//               "subTotal":5000
-//            }
-//         }
-//     },
-// ];
+var dataHistory = [
+    {
+        "total": 54000,
+        "cash": 100000,
+        "moneyChange": 46000,
+        "dateTime": "Senin, 1 Juni 2024 Jam 12:58 WIB",
+        "outlet": "M1 - Menara BNI Pejompongan",
+        "sumQty": 4,
+        "receipt": {
+            "Indofood Sambal Pedas 275 ml": {
+                "logo": "../assets/img/product/dapur/img-sambal-indofood.png",
+                "amount": 14000,
+                "category": "dapur",
+                "productName": "Indofood Sambal Pedas 275 ml",
+                "qty": 2,
+                "index": "0",
+                "subTotal": 28000
+            },
+            "Royco Bumbu Penyedap Rasa Kaldu Ayam 220 g": {
+                "logo": "../assets/img/product/dapur/img-royco.png",
+                "amount": 13000,
+                "category": "dapur",
+                "productName": "Royco Bumbu Penyedap Rasa Kaldu Ayam 220 g",
+                "qty": 2,
+                "index": "1",
+                "subTotal": 26000
+            },
+        },
+    },
+    {
+        "total":37000,
+        "cash":50000,
+        "moneyChange":13000,
+        "dateTime":"Senin, 1 Juni 2024 Jam 15:40 WIB ",
+        "outlet":"M1 - Menara BNI Pejompongan",
+        "sumQty":2,
+        "receipt":{
+           "CAMEL Yellow Rokok 20 Batang":{
+              "logo":"../assets/img/product/rokok/img-rokok-camel-yellow.jpg",
+              "amount":32000,
+              "category":"rokok",
+              "productName":"CAMEL Yellow Rokok 20 Batang",
+              "qty":1,
+              "index":"0",
+              "subTotal":32000
+           },
+           "Tehbotol Sosro Tawar 350 ml":{
+              "logo":"../assets/img/product/minuman/img-teh-botol-tawar.jpg",
+              "amount":5000,
+              "category":"minuman",
+              "productName":"Tehbotol Sosro Tawar 350 ml",
+              "qty":1,
+              "index":"0",
+              "subTotal":5000
+           }
+        }
+    },
+];
 
 function convertIDR(idr){
     return idr.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -272,8 +272,11 @@ function donePayment(method){
     }
 }
 
-async function saveTransaction() {
-    //let transactionHistory = JSON.parse(localStorage.getItem('transactionHistory')) || dataHistory;
+// async function saveTransaction() {
+function saveTransaction() {
+    // For Dummy
+    let transactionHistory = JSON.parse(localStorage.getItem('transactionHistory')) || dataHistory;
+    //End
     const newTransaction = {
         "total": total,
         "cash": cash,
@@ -284,23 +287,26 @@ async function saveTransaction() {
         "receipt": cart,
     };
 
-    await fetch('http://10.70.135.82:3000/createReceipt', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({transaction: JSON.stringify(newTransaction)})
-    });
+    // For DB
+    // await fetch('http://192.168.8.105:3000/createReceipt', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Accept': 'application/json',
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({transaction: JSON.stringify(newTransaction)})
+    // });
 
+    //For Dummy
     // Add new transaction to the array
-    //transactionHistory.push(newTransaction);
+    transactionHistory.push(newTransaction);
 
     // Update localStorage with the new transaction
-    //localStorage.setItem('transactionHistory', JSON.stringify(transactionHistory));
+    localStorage.setItem('transactionHistory', JSON.stringify(transactionHistory));
 
     // Update the original transactions array (if required)
-    //dataHistory.push(newTransaction);
+    dataHistory.push(newTransaction);
+    // End  
 }
 
 function dateNow(){
