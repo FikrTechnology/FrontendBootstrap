@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   <body onload="loadDataHistory()">
+    <div class="small-screen-warning">
+        <h2>Aplikasi ini hanya untuk perangkat dengan layar besar</h2>
+        <p>Silakan gunakan laptop atau desktop untuk pengalaman yang optimal.</p>
+    </div>
     
     <section class="dashboard d-flex bg-grey">
         <div class="history-left white-card w-15 h-100 border-end rounded-4">
@@ -75,7 +79,7 @@
                         <div class="col-8">
                             <form class="">
                                 <img src="../assets/icons/ico-search-grey.svg" class="img-search-bar">
-                                <input class="form-control mr-sm-2 search-bar" type="search" placeholder="Search" aria-label="Search">
+                                <input class="form-control mr-sm-2 search-bar" id="searchInput" type="search" placeholder="Search" aria-label="Search">
                             </form>
                         </div>
                         <div class="col-2 filters-bar d-flex">
@@ -89,6 +93,12 @@
                                 <img src="../assets/icons/ico-sort-grey.svg" alt="">
                             </div>
                             <label for="" class="font-grey ms-2">Sort</label>
+                            <select id="sortSelect" class="form-select">
+                                <option value="newest">Terbaru</option>
+                                <option value="oldest">Terlama</option>
+                                <option value="outlet-asc">Outlet A-Z</option>
+                                <option value="outlet-desc">Outlet Z-A</option>
+                            </select>
                         </div>
                     </div>
 

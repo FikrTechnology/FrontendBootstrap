@@ -1,3 +1,22 @@
+.small-screen-warning {
+    display: none;
+  }
+
+@media screen and (max-width: 1023px) {
+body > *:not(.small-screen-warning) {
+    display: none !important;
+}
+.small-screen-warning {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+}
+
 *{
     font-family: 'Poppins', sans-serif;
 }

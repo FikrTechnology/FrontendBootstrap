@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   <body onload="loadProduct()">
+    <div class="small-screen-warning">
+        <h2>Aplikasi ini hanya untuk perangkat dengan layar besar</h2>
+        <p>Silakan gunakan laptop atau desktop untuk pengalaman yang optimal.</p>
+    </div>
     
     <section class="dashboard d-flex bg-grey">
         <div class="menu-left white-card w-15 h-100 border-end rounded-4">
@@ -75,7 +79,14 @@
                         <div class="col-8">
                             <form class="">
                                 <img src="../assets/icons/ico-search-grey.svg" class="img-search-bar">
-                                <input class="form-control mr-sm-2 search-bar" type="search" placeholder="Search" aria-label="Search">
+                                <input 
+                                    class="form-control mr-sm-2 search-bar" 
+                                    type="search" 
+                                    id="searchInput"
+                                    placeholder="Search" 
+                                    aria-label="Search"
+                                    oninput="handleSearch(this.value)"
+                                >
                             </form>
                         </div>
                         <div class="col-2 filters-bar d-flex">
@@ -84,11 +95,18 @@
                             </div>
                             <label for="" class="font-grey ms-2">Filters</label>
                         </div>
-                        <div class="col-2 filters-bar d-flex ms-2">
+                        <div class="col-2 filters-bar d-flex ms-2" id="sortContainer">
                             <div>
                                 <img src="../assets/icons/ico-sort-grey.svg" alt="">
                             </div>
                             <label for="" class="font-grey ms-2">Sort</label>
+                            <select class="form-select" onchange="handleSort(this.value)">
+                                <option value="">Urutkan...</option>
+                                <option value="name-asc">Nama (A-Z)</option>
+                                <option value="name-desc">Nama (Z-A)</option>
+                                <option value="price-asc">Harga Termurah</option>
+                                <option value="price-desc">Harga Termahal</option>
+                            </select>
                         </div>
                     </div>
 
